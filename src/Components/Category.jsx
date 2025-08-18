@@ -9,10 +9,10 @@ export default function Category() {
     const [categories, setCategory] = useState([]);
 
     const fetchCategory = async () => {
-        const response = await fetch("http://localhost:5000/categories");
-        const data = await response.json();
-        setCategory(data);
-    }
+    const response = await fetch("/api/categories");
+    const data = await response.json();
+    setCategory(data);
+    };
 
     useEffect(
         () => {
@@ -47,7 +47,7 @@ export default function Category() {
                             <div style={{
                                 transform: `translateX(-${slide * 100}%)`
                             }} key={index} className='w-[124px] shrink-0 duration-500'>
-                                <img src={"http://localhost:5000/images/"+ cat.image} alt="" />
+                                <img src={`/api/images/${cat.image}`} alt="" />
                             </div>
                         )
                     }

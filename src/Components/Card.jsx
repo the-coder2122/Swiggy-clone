@@ -4,7 +4,7 @@ export default function Card(props) {
   return (
     <div className={`${props.width} shrink-0 grow mb-4`}>
         <div className='group h-[170px] rounded-[15px] overflow-hidden relative'>
-            <img className='group-hover:scale-110 duration-150 object-cover w-full h-full' src={"http://localhost:5000/images/" + props.image} alt="" />
+            <img className='group-hover:scale-110 duration-150 object-cover w-full h-full' src={`/api/images/${props.image}`} alt="" />
             <div className='image-overlay absolute w-full h-full top-0 flex items-end p-2 text-[22px] font-bold text-white tracking-tighter'>
                 {props.offer}
             </div>
